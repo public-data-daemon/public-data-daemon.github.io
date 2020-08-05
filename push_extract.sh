@@ -14,5 +14,7 @@ mkdir -p $csv_dest
 cp $(ls $todays_files) $csv_dest
 
 git add "$csv_dest/$csv_glob"
+date > "$csv_dest/last_run.txt"
+git add "$csv_dest/last_run.txt"
 git commit -m 'data: run automated extract.'
 git push origin
